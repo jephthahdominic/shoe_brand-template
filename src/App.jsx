@@ -1,10 +1,14 @@
 import { Hero, PopularProducts, CustomerReviews, Footer, Services, SpecialOffer, Subscribe, SuperQuality } from "./sections/index";
 import Nav from "./components/Nav";
+import SideNav from "./components/SideNav";
 
 const App = () => {
   return(
     <main className="relative">
       <Nav />
+      <div className="padding fixed h-full w-full bg-gray-400 z-20">
+        <SideNav />
+      </div>
       <section className="xl:padding-l wide:padding-r padding-b">
         <Hero/>
       </section>
