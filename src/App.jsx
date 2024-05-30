@@ -9,7 +9,8 @@ const App = () => {
     <main className="relative">
       <Nav 
         openSideBar = {(open)=>setSideBarState(open)}
-      />
+     
+     />
       <div className={`fixed z-50 w-screen h-screen 
       bg-darkTransparent justify-end ${sideBarState?'flex':'hidden'}
       transition ease-in-out delay-150
