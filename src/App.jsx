@@ -1,13 +1,23 @@
 import { Hero, PopularProducts, CustomerReviews, Footer, Services, SpecialOffer, Subscribe, SuperQuality } from "./sections/index";
 import Nav from "./components/Nav";
 import SideNav from "./components/SideNav";
+import { useState } from "react";
 
 const App = () => {
+  const [sideBarState, setSideBarState] = useState(false)
   return(
     <main className="relative">
-      <Nav />
-      <div className="padding fixed h-full w-full bg-gray-400 z-20">
-        <SideNav />
+      <Nav 
+        openSideBar = {(open)=>setSideBarState(open)}
+      />
+      <div className={`fixed z-50 w-screen h-screen 
+      bg-darkTransparent justify-end ${sideBarState?'flex':'hidden'}
+      transition ease-in-out delay-150
+      ${!sideBarState ? 'invisible':'visible'}`}>
+        <SideNav 
+          openSideBar = {(close)=>setSideBarState(close)}
+          sideBarState = {sideBarState}
+        />
       </div>
       <section className="xl:padding-l wide:padding-r padding-b">
         <Hero/>

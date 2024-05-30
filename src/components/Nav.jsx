@@ -2,7 +2,7 @@ import {headerLogo} from '../assets/images';
 import {hamburger} from '../assets/icons/index'
 import { navLinks } from '../constants/Index';
 
-const Nav = () => {
+const Nav = ({openSideBar}) => {
   return (
     <header className='padding-x py-8 absolute z-10 w-full'>
         <nav className='flex justify-between items-center max-container'>
@@ -28,6 +28,7 @@ const Nav = () => {
                     width={25} 
                     height={25}
                     className='hidden max-lg:block'
+                    onClick={()=>openSideBar(true)}
                 />
             </div>
         </nav>

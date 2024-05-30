@@ -26,7 +26,8 @@ export default {
         "coral-red": "#FF6452",
         "slate-gray": "#6D6D6D",
         "pale-blue": "#F5F6FF",
-        "white-400": "rgba(255, 255, 255, 0.80)"
+        "white-400": "rgba(255, 255, 255, 0.80)",
+        "darkTransparent":"rgba(100, 100, 100, 0.5)"
       },
       boxShadow: {
         '3xl': '0 10px 40px rgba(0, 0, 0, 0.1)'
@@ -37,6 +38,20 @@ export default {
       },
       screens: {
         "wide": "1440px"
+      },
+      keyframes:{
+        displace: {
+          '0%':{transform: 'translate(100%)'},
+          '100%':{transform: 'translate(0px)'}
+        },
+        return:{
+          '0%':{transform: 'translate(0px)'},
+          '100%':{transform:'translate(100%)'}
+        }
+      },
+      animation:{
+        displace:'displace .5s ease-in-out',
+        return:'return .5s ease-in-out'
       }
     },
   },
