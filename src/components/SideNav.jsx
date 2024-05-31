@@ -5,7 +5,7 @@ import Button from './Button'
 
 const SideNav = ({openSideBar, sideBarState}) => {
   return (
-    <section className={`bg-white h-full w-[85%] p-4 pl-7 ${sideBarState ? 'animate-displace':'animate-return'}`}>
+    <section className={`bg-white h-full max-sm:w-full w-[85%] md:w-[50%] p-4 pl-7 ${sideBarState ? 'animate-displace':'animate-return'}`}>
       <div className='flex justify-end p-1'>
         <button 
           className='transparent hover:bg-gray-300 p-1.5 rounded-full'
@@ -21,7 +21,9 @@ const SideNav = ({openSideBar, sideBarState}) => {
       <div className='flex flex-col gap-10'>
         <ul className='mt-7 flex flex-col gap-5 pt-3 pb-3'>
           {navLinks.map((link)=>(
-            <li key={link.label} className='flex justify-between items-center'>
+            <li key={link.label} className='flex justify-between items-center'
+            onClick={()=>openSideBar(false)}
+            >
               <a href={link.href} className='font-montserrat text-black text-2xl font-semibold'>{link.label}</a>
             </li>
           ))}
